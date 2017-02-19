@@ -7,19 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C4228D91E57DFBB008F0D31 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4228D81E57DFBB008F0D31 /* TimelineView.swift */; };
+		9C4228DB1E57DFF3008F0D31 /* TimelineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4228DA1E57DFF3008F0D31 /* TimelineModel.swift */; };
+		9C4228E31E57E41F008F0D31 /* Layouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4228E21E57E41F008F0D31 /* Layouter.swift */; };
+		9C4228E51E57E609008F0D31 /* TimelineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4228E41E57E609008F0D31 /* TimelineCell.swift */; };
+		9C4228E71E57EA1C008F0D31 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4228E61E57EA1C008F0D31 /* Color.swift */; };
+		9C4228E91E57EB1B008F0D31 /* Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4228E81E57EB1B008F0D31 /* Layer.swift */; };
+		9C4228EB1E581D06008F0D31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C4228EA1E581D06008F0D31 /* Main.storyboard */; };
+		9C4228ED1E581D6B008F0D31 /* TimelineHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4228EC1E581D6B008F0D31 /* TimelineHeaderView.swift */; };
+		9C4228EF1E58573F008F0D31 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4228EE1E58573F008F0D31 /* DataModel.swift */; };
+		9C4228F11E591724008F0D31 /* CalendarInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4228F01E591724008F0D31 /* CalendarInfo.swift */; };
+		9C4228F31E591828008F0D31 /* Explorer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4228F21E591828008F0D31 /* Explorer.swift */; };
+		9C4228F51E591945008F0D31 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4228F41E591945008F0D31 /* Tools.swift */; };
+		9C4228F71E59194C008F0D31 /* UITools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4228F61E59194C008F0D31 /* UITools.swift */; };
 		B10343BB1E56F88300BE6BA7 /* TimelineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10343BA1E56F88300BE6BA7 /* TimelineController.swift */; };
 		B1C9FC831E5144D700E202C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C9FC821E5144D700E202C1 /* AppDelegate.swift */; };
-		B1C9FC881E5144D700E202C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1C9FC861E5144D700E202C1 /* Main.storyboard */; };
 		B1C9FC8B1E5144D700E202C1 /* The_Day.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1C9FC891E5144D700E202C1 /* The_Day.xcdatamodeld */; };
 		B1C9FC8D1E5144D700E202C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1C9FC8C1E5144D700E202C1 /* Assets.xcassets */; };
 		B1C9FC901E5144D700E202C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1C9FC8E1E5144D700E202C1 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C4228D81E57DFBB008F0D31 /* TimelineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
+		9C4228DA1E57DFF3008F0D31 /* TimelineModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineModel.swift; sourceTree = "<group>"; };
+		9C4228E21E57E41F008F0D31 /* Layouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layouter.swift; sourceTree = "<group>"; };
+		9C4228E41E57E609008F0D31 /* TimelineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineCell.swift; sourceTree = "<group>"; };
+		9C4228E61E57EA1C008F0D31 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		9C4228E81E57EB1B008F0D31 /* Layer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layer.swift; sourceTree = "<group>"; };
+		9C4228EA1E581D06008F0D31 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		9C4228EC1E581D6B008F0D31 /* TimelineHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineHeaderView.swift; sourceTree = "<group>"; };
+		9C4228EE1E58573F008F0D31 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		9C4228F01E591724008F0D31 /* CalendarInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarInfo.swift; sourceTree = "<group>"; };
+		9C4228F21E591828008F0D31 /* Explorer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Explorer.swift; sourceTree = "<group>"; };
+		9C4228F41E591945008F0D31 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
+		9C4228F61E59194C008F0D31 /* UITools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITools.swift; sourceTree = "<group>"; };
 		B10343BA1E56F88300BE6BA7 /* TimelineController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineController.swift; sourceTree = "<group>"; };
 		B1C9FC7F1E5144D700E202C1 /* The_Day.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = The_Day.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1C9FC821E5144D700E202C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B1C9FC871E5144D700E202C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B1C9FC8A1E5144D700E202C1 /* The_Day.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = The_Day.xcdatamodel; sourceTree = "<group>"; };
 		B1C9FC8C1E5144D700E202C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1C9FC8F1E5144D700E202C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,13 +61,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C4228DC1E57E411008F0D31 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		9C4228DD1E57E411008F0D31 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
+		9C4228DE1E57E411008F0D31 /* Globals */ = {
+			isa = PBXGroup;
+			children = (
+				9C4228DF1E57E411008F0D31 /* Database */,
+				9C4228E01E57E411008F0D31 /* Extensions */,
+				9C4228E11E57E411008F0D31 /* Tools */,
+			);
+			path = Globals;
+			sourceTree = "<group>";
+		};
+		9C4228DF1E57E411008F0D31 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				9C4228EE1E58573F008F0D31 /* DataModel.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		9C4228E01E57E411008F0D31 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9C4228E11E57E411008F0D31 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				9C4228E21E57E41F008F0D31 /* Layouter.swift */,
+				9C4228E61E57EA1C008F0D31 /* Color.swift */,
+				9C4228E81E57EB1B008F0D31 /* Layer.swift */,
+				9C4228F01E591724008F0D31 /* CalendarInfo.swift */,
+				9C4228F21E591828008F0D31 /* Explorer.swift */,
+				9C4228F41E591945008F0D31 /* Tools.swift */,
+				9C4228F61E59194C008F0D31 /* UITools.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		B10343B71E56F7D400BE6BA7 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				B10343BE1E56F9A100BE6BA7 /* Globals */,
+				9C4228DC1E57E411008F0D31 /* Calendar */,
+				9C4228DD1E57E411008F0D31 /* Edit */,
+				9C4228DE1E57E411008F0D31 /* Globals */,
 				B10343B91E56F84300BE6BA7 /* Timeline */,
-				B10343BC1E56F9A100BE6BA7 /* Calendar */,
-				B10343BD1E56F9A100BE6BA7 /* Edit */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -51,12 +128,12 @@
 		B10343B81E56F7D800BE6BA7 /* AppResources */ = {
 			isa = PBXGroup;
 			children = (
-				B1C9FC911E5144D700E202C1 /* Info.plist */,
 				B1C9FC821E5144D700E202C1 /* AppDelegate.swift */,
+				B1C9FC911E5144D700E202C1 /* Info.plist */,
 				B1C9FC891E5144D700E202C1 /* The_Day.xcdatamodeld */,
-				B1C9FC861E5144D700E202C1 /* Main.storyboard */,
 				B1C9FC8C1E5144D700E202C1 /* Assets.xcassets */,
 				B1C9FC8E1E5144D700E202C1 /* LaunchScreen.storyboard */,
+				9C4228EA1E581D06008F0D31 /* Main.storyboard */,
 			);
 			name = AppResources;
 			sourceTree = "<group>";
@@ -65,53 +142,12 @@
 			isa = PBXGroup;
 			children = (
 				B10343BA1E56F88300BE6BA7 /* TimelineController.swift */,
+				9C4228D81E57DFBB008F0D31 /* TimelineView.swift */,
+				9C4228EC1E581D6B008F0D31 /* TimelineHeaderView.swift */,
+				9C4228DA1E57DFF3008F0D31 /* TimelineModel.swift */,
+				9C4228E41E57E609008F0D31 /* TimelineCell.swift */,
 			);
 			path = Timeline;
-			sourceTree = "<group>";
-		};
-		B10343BC1E56F9A100BE6BA7 /* Calendar */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Calendar;
-			sourceTree = "<group>";
-		};
-		B10343BD1E56F9A100BE6BA7 /* Edit */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Edit;
-			sourceTree = "<group>";
-		};
-		B10343BE1E56F9A100BE6BA7 /* Globals */ = {
-			isa = PBXGroup;
-			children = (
-				B10343BF1E56F9A100BE6BA7 /* Database */,
-				B10343C01E56F9A100BE6BA7 /* Extensions */,
-				B10343C11E56F9A100BE6BA7 /* Tools */,
-			);
-			path = Globals;
-			sourceTree = "<group>";
-		};
-		B10343BF1E56F9A100BE6BA7 /* Database */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Database;
-			sourceTree = "<group>";
-		};
-		B10343C01E56F9A100BE6BA7 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		B10343C11E56F9A100BE6BA7 /* Tools */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Tools;
 			sourceTree = "<group>";
 		};
 		B1C9FC761E5144D600E202C1 = {
@@ -171,7 +207,7 @@
 				TargetAttributes = {
 					B1C9FC7E1E5144D600E202C1 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 9X2EVZ736U;
+						DevelopmentTeam = W6XAGW63EX;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -199,9 +235,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C4228EB1E581D06008F0D31 /* Main.storyboard in Resources */,
 				B1C9FC901E5144D700E202C1 /* LaunchScreen.storyboard in Resources */,
 				B1C9FC8D1E5144D700E202C1 /* Assets.xcassets in Resources */,
-				B1C9FC881E5144D700E202C1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,23 +248,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C4228E31E57E41F008F0D31 /* Layouter.swift in Sources */,
+				9C4228E51E57E609008F0D31 /* TimelineCell.swift in Sources */,
+				9C4228EF1E58573F008F0D31 /* DataModel.swift in Sources */,
+				9C4228DB1E57DFF3008F0D31 /* TimelineModel.swift in Sources */,
 				B10343BB1E56F88300BE6BA7 /* TimelineController.swift in Sources */,
+				9C4228ED1E581D6B008F0D31 /* TimelineHeaderView.swift in Sources */,
 				B1C9FC8B1E5144D700E202C1 /* The_Day.xcdatamodeld in Sources */,
+				9C4228F71E59194C008F0D31 /* UITools.swift in Sources */,
+				9C4228F11E591724008F0D31 /* CalendarInfo.swift in Sources */,
+				9C4228E71E57EA1C008F0D31 /* Color.swift in Sources */,
+				9C4228E91E57EB1B008F0D31 /* Layer.swift in Sources */,
 				B1C9FC831E5144D700E202C1 /* AppDelegate.swift in Sources */,
+				9C4228F51E591945008F0D31 /* Tools.swift in Sources */,
+				9C4228F31E591828008F0D31 /* Explorer.swift in Sources */,
+				9C4228D91E57DFBB008F0D31 /* TimelineView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B1C9FC861E5144D700E202C1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B1C9FC871E5144D700E202C1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B1C9FC8E1E5144D700E202C1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -337,9 +377,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9X2EVZ736U;
+				DEVELOPMENT_TEAM = W6XAGW63EX;
 				INFOPLIST_FILE = The_Day/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Myron.The-Day";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -351,9 +391,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9X2EVZ736U;
+				DEVELOPMENT_TEAM = W6XAGW63EX;
 				INFOPLIST_FILE = The_Day/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Myron.The-Day";
 				PRODUCT_NAME = "$(TARGET_NAME)";
