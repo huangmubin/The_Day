@@ -8,6 +8,14 @@
 
 import Foundation
 
+public func mylog(_ note: String, path: String = #file, function: String = #function) {
+    var file = path
+    if let range = file.range(of: "/Classes/") {
+        file.removeSubrange(file.startIndex ..< range.upperBound)
+    }
+    print("\(file) -> \(function): \(note)")
+}
+
 public class Tools {
     
     // MARK: - 进制转换工具

@@ -21,6 +21,11 @@
 		9C4228F51E591945008F0D31 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4228F41E591945008F0D31 /* Tools.swift */; };
 		9C4228F71E59194C008F0D31 /* UITools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4228F61E59194C008F0D31 /* UITools.swift */; };
 		B10343BB1E56F88300BE6BA7 /* TimelineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10343BA1E56F88300BE6BA7 /* TimelineController.swift */; };
+		B186D25C1E5AEC61002F8B7B /* EditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186D25B1E5AEC61002F8B7B /* EditController.swift */; };
+		B186D25E1E5AEC73002F8B7B /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186D25D1E5AEC73002F8B7B /* EditView.swift */; };
+		B186D2601E5AEC7E002F8B7B /* EditModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186D25F1E5AEC7E002F8B7B /* EditModel.swift */; };
+		B186D2621E5AEC8C002F8B7B /* EditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186D2611E5AEC8C002F8B7B /* EditCell.swift */; };
+		B186D2641E5AECEA002F8B7B /* TimelineTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186D2631E5AECEA002F8B7B /* TimelineTableView.swift */; };
 		B1C9FC831E5144D700E202C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C9FC821E5144D700E202C1 /* AppDelegate.swift */; };
 		B1C9FC8B1E5144D700E202C1 /* The_Day.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1C9FC891E5144D700E202C1 /* The_Day.xcdatamodeld */; };
 		B1C9FC8D1E5144D700E202C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1C9FC8C1E5144D700E202C1 /* Assets.xcassets */; };
@@ -42,6 +47,11 @@
 		9C4228F41E591945008F0D31 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		9C4228F61E59194C008F0D31 /* UITools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITools.swift; sourceTree = "<group>"; };
 		B10343BA1E56F88300BE6BA7 /* TimelineController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineController.swift; sourceTree = "<group>"; };
+		B186D25B1E5AEC61002F8B7B /* EditController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditController.swift; sourceTree = "<group>"; };
+		B186D25D1E5AEC73002F8B7B /* EditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		B186D25F1E5AEC7E002F8B7B /* EditModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditModel.swift; sourceTree = "<group>"; };
+		B186D2611E5AEC8C002F8B7B /* EditCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCell.swift; sourceTree = "<group>"; };
+		B186D2631E5AECEA002F8B7B /* TimelineTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableView.swift; sourceTree = "<group>"; };
 		B1C9FC7F1E5144D700E202C1 /* The_Day.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = The_Day.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1C9FC821E5144D700E202C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1C9FC8A1E5144D700E202C1 /* The_Day.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = The_Day.xcdatamodel; sourceTree = "<group>"; };
@@ -71,6 +81,10 @@
 		9C4228DD1E57E411008F0D31 /* Edit */ = {
 			isa = PBXGroup;
 			children = (
+				B186D25B1E5AEC61002F8B7B /* EditController.swift */,
+				B186D25D1E5AEC73002F8B7B /* EditView.swift */,
+				B186D25F1E5AEC7E002F8B7B /* EditModel.swift */,
+				B186D2611E5AEC8C002F8B7B /* EditCell.swift */,
 			);
 			path = Edit;
 			sourceTree = "<group>";
@@ -143,6 +157,7 @@
 			children = (
 				B10343BA1E56F88300BE6BA7 /* TimelineController.swift */,
 				9C4228D81E57DFBB008F0D31 /* TimelineView.swift */,
+				B186D2631E5AECEA002F8B7B /* TimelineTableView.swift */,
 				9C4228EC1E581D6B008F0D31 /* TimelineHeaderView.swift */,
 				9C4228DA1E57DFF3008F0D31 /* TimelineModel.swift */,
 				9C4228E41E57E609008F0D31 /* TimelineCell.swift */,
@@ -249,7 +264,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C4228E31E57E41F008F0D31 /* Layouter.swift in Sources */,
+				B186D25E1E5AEC73002F8B7B /* EditView.swift in Sources */,
 				9C4228E51E57E609008F0D31 /* TimelineCell.swift in Sources */,
+				B186D2601E5AEC7E002F8B7B /* EditModel.swift in Sources */,
 				9C4228EF1E58573F008F0D31 /* DataModel.swift in Sources */,
 				9C4228DB1E57DFF3008F0D31 /* TimelineModel.swift in Sources */,
 				B10343BB1E56F88300BE6BA7 /* TimelineController.swift in Sources */,
@@ -257,9 +274,12 @@
 				B1C9FC8B1E5144D700E202C1 /* The_Day.xcdatamodeld in Sources */,
 				9C4228F71E59194C008F0D31 /* UITools.swift in Sources */,
 				9C4228F11E591724008F0D31 /* CalendarInfo.swift in Sources */,
+				B186D25C1E5AEC61002F8B7B /* EditController.swift in Sources */,
+				B186D2621E5AEC8C002F8B7B /* EditCell.swift in Sources */,
 				9C4228E71E57EA1C008F0D31 /* Color.swift in Sources */,
 				9C4228E91E57EB1B008F0D31 /* Layer.swift in Sources */,
 				B1C9FC831E5144D700E202C1 /* AppDelegate.swift in Sources */,
+				B186D2641E5AECEA002F8B7B /* TimelineTableView.swift in Sources */,
 				9C4228F51E591945008F0D31 /* Tools.swift in Sources */,
 				9C4228F31E591828008F0D31 /* Explorer.swift in Sources */,
 				9C4228D91E57DFBB008F0D31 /* TimelineView.swift in Sources */,

@@ -34,4 +34,13 @@ class TimelineController: UIViewController {
     
     var data = TimelineModel()
     
+    // MARK: - Segue
+    
+    func pushEditController() {
+        let edit = EditController()
+        self.present(edit, animated: true) { 
+            
+        }
+    }
+    
 }
