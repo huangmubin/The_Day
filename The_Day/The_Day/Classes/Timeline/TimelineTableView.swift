@@ -46,8 +46,7 @@ class TimelineTableView: UITableView, UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TimelineCell", for: indexPath) as! TimelineCell
-        cell.deploy()
-        cell.update(date: data[indexPath.row][0].value)
+        cell.deploy(data[indexPath.row])
         return cell
     }
     

@@ -10,8 +10,8 @@ import UIKit
 
 class Color {
     
-    static let totalBackground = UIColor(55,1,66)
-    static let headerBackground = UIColor(99,32,138)
+    static let totalBackground = UIColor(255,255,255)
+    static let headerBackground = UIColor(80,227,194)
 }
 
 extension UIColor {

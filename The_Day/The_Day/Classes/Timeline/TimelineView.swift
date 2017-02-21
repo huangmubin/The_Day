@@ -35,21 +35,19 @@ class TimelineView: UIView {
         backgroundColor = Color.totalBackground
         
         
-        lineView.backgroundColor = UIColor.clear
-        lineView.layer.backgroundColor = UIColor.black.cgColor
-        addSubview(lineView)
-        Layouter(superview: self, view: lineView).leading(60).widthSelf(4).top().bottom()
+//        lineView.backgroundColor = UIColor.clear
+//        lineView.layer.backgroundColor = UIColor.black.cgColor
+//        addSubview(lineView)
+//        Layouter(superview: self, view: lineView).leading(60).widthSelf(4).top().bottom()
         
-        //
+        // TableView
         tableView.timeline = self
+        tableView.frame = CGRect.screen.transform(y: 80)
         addSubview(tableView)
-        addSubview(header)
         
-        //
-        Layouter(superview: self, view: header).top().leading().trailing().heightSelf(40).constrants(last: {
-            self.header.heightLayout = $0
-        })
-        Layouter(superview: self, view: tableView).bottom().leading().trailing().setViews(relative: header).layout(edge: .top, to: .bottom)
+        
+        header.frame = CGRect.screen.update(h: 80)
+        addSubview(header)
     }
     
     // MARK: - Size

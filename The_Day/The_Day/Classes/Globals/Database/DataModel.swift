@@ -25,13 +25,41 @@ class DataModel {
     
     // MARK: Original Value
     
-    var _date: Double = 0
-    var _tag: Int = 0
+    var _date: Double = 0 {
+        didSet { date = Date(timeIntervalSince1970: _date) }
+    }
+    var _type: Int = 0 {
+        didSet { type = DataType(rawValue: _type) ?? .date }
+    }
     var _value: String = ""
-    var _type: Int = 0
+    
+    // MARK: Middle Value
+    
+    var date: Date = Date()
+    var type: DataType = DataType.date
     
     // MARK: Date
     
+    static var dayFormat: DateFormatter = {
+        let format = DateFormatter()
+        format.dateFormat = "dd"
+        return format
+    }()
+    
+    static var monthFormat: DateFormatter = {
+        let format = DateFormatter()
+        format.dateFormat = "yyyy-MM"
+        return format
+    }()
+    
+    // MARK: Value
+    
+    var day: String {
+        return DataModel.dayFormat.string(from: date)
+    }
+    var month: String {
+        return DataModel.monthFormat.string(from: date)
+    }
     var value: String {
         set { _value = newValue }
         get { return _value }

@@ -21,6 +21,7 @@
 		9C4228F51E591945008F0D31 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4228F41E591945008F0D31 /* Tools.swift */; };
 		9C4228F71E59194C008F0D31 /* UITools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4228F61E59194C008F0D31 /* UITools.swift */; };
 		B10343BB1E56F88300BE6BA7 /* TimelineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10343BA1E56F88300BE6BA7 /* TimelineController.swift */; };
+		B15F67301E5C3F8F0039CE9C /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15F672F1E5C3F8F0039CE9C /* Size.swift */; };
 		B186D25C1E5AEC61002F8B7B /* EditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186D25B1E5AEC61002F8B7B /* EditController.swift */; };
 		B186D25E1E5AEC73002F8B7B /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186D25D1E5AEC73002F8B7B /* EditView.swift */; };
 		B186D2601E5AEC7E002F8B7B /* EditModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186D25F1E5AEC7E002F8B7B /* EditModel.swift */; };
@@ -47,6 +48,7 @@
 		9C4228F41E591945008F0D31 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		9C4228F61E59194C008F0D31 /* UITools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITools.swift; sourceTree = "<group>"; };
 		B10343BA1E56F88300BE6BA7 /* TimelineController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineController.swift; sourceTree = "<group>"; };
+		B15F672F1E5C3F8F0039CE9C /* Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 		B186D25B1E5AEC61002F8B7B /* EditController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditController.swift; sourceTree = "<group>"; };
 		B186D25D1E5AEC73002F8B7B /* EditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		B186D25F1E5AEC7E002F8B7B /* EditModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditModel.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		9C4228E01E57E411008F0D31 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B15F672F1E5C3F8F0039CE9C /* Size.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -157,9 +160,9 @@
 			children = (
 				B10343BA1E56F88300BE6BA7 /* TimelineController.swift */,
 				9C4228D81E57DFBB008F0D31 /* TimelineView.swift */,
+				9C4228DA1E57DFF3008F0D31 /* TimelineModel.swift */,
 				B186D2631E5AECEA002F8B7B /* TimelineTableView.swift */,
 				9C4228EC1E581D6B008F0D31 /* TimelineHeaderView.swift */,
-				9C4228DA1E57DFF3008F0D31 /* TimelineModel.swift */,
 				9C4228E41E57E609008F0D31 /* TimelineCell.swift */,
 			);
 			path = Timeline;
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C4228E31E57E41F008F0D31 /* Layouter.swift in Sources */,
+				B15F67301E5C3F8F0039CE9C /* Size.swift in Sources */,
 				B186D25E1E5AEC73002F8B7B /* EditView.swift in Sources */,
 				9C4228E51E57E609008F0D31 /* TimelineCell.swift in Sources */,
 				B186D2601E5AEC7E002F8B7B /* EditModel.swift in Sources */,
