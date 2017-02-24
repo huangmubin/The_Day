@@ -8,12 +8,6 @@
 
 import UIKit
 
-class Color {
-    
-    static let totalBackground = UIColor(255,255,255)
-    static let headerBackground = UIColor(80,227,194)
-}
-
 extension UIColor {
     
     convenience init(_ red: CGFloat, _ green: CGFloat, _ blue: CGFloat, _ alpha: CGFloat = 1) {

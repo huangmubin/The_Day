@@ -20,19 +20,27 @@ class TimelineController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        data.analysis()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let date = MCalendar()
+        timeline.header.update(year: "\(date.sMonth). \(date.year)", day: "\(date.sWeek) \(date.sDay)th")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
+    
+    // MARK: - Controller Set
+    
     override var preferredStatusBarStyle: UIStatusBarStyle { return UIStatusBarStyle.lightContent }
-    override var prefersStatusBarHidden: Bool { return true }
+    //override var prefersStatusBarHidden: Bool { return true }
     
     // MARK: - View
     
     private let timeline = TimelineView()
-    
-    // MARK: - Data
-    
-    var data = TimelineModel()
     
     // MARK: - Segue
     

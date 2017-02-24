@@ -13,7 +13,6 @@ class TimelineTableView: UITableView, UITableViewDataSource, UITableViewDelegate
     // MARK: - TableView
     
     weak var timeline: TimelineView!
-    var data: TimelineModel { return timeline!.data }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -28,7 +27,7 @@ class TimelineTableView: UITableView, UITableViewDataSource, UITableViewDelegate
     private func deploy() {
         register(TimelineCell.self, forCellReuseIdentifier: "TimelineCell")
         separatorStyle = .none
-        backgroundColor = UIColor.clear
+        backgroundColor = UIColor.white
         
         dataSource = self
         delegate = self
@@ -36,18 +35,18 @@ class TimelineTableView: UITableView, UITableViewDataSource, UITableViewDelegate
     
     // MARK: - UITableViewDataSource
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return timeline == nil ? 0 : data.count
+        return AppData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TimelineCell", for: indexPath) as! TimelineCell
-        cell.deploy(data[indexPath.row])
+        cell.deploy(AppData[indexPath])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return AppData[indexPath].height
     }
     
     // MARK: - UITableViewDelegate
@@ -72,10 +71,10 @@ class TimelineTableView: UITableView, UITableViewDataSource, UITableViewDelegate
     }
     
     func scrollViewDraggingEnd(_ scrollView: UIScrollView) {
-        print("\(#file) \(#function): \(scrollViewOffset)")
-        if scrollViewOffset < -50 {
-            timeline.controller.pushEditController()
-        }
+//        print("\(#file) \(#function): \(scrollViewOffset)")
+//        if scrollViewOffset < -50 {
+//            timeline.controller.pushEditController()
+//        }
     }
 }
 
