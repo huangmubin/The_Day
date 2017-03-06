@@ -1,17 +1,14 @@
 //
-//  CalendarInfo.swift
+//  Date.swift
 //  The_Day
 //
-//  Created by 黄穆斌 on 2017/2/19.
+//  Created by 黄穆斌 on 2017/2/23.
 //  Copyright © 2017年 黄穆斌. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-
-// MARK: - Calendar Infos
-
-class CalendarInfo {
+class MCalendar {
     
     // MARK: Value
     
@@ -42,13 +39,9 @@ class CalendarInfo {
         return calendar.component(Calendar.Component.day, from: date)
     }
     /// Sunday is 1
-    var weekday: Int {
+    var week: Int {
         return calendar.component(Calendar.Component.weekday, from: date) - 1
     }
-    var week: CalendarInfo.Week {
-        return CalendarInfo.Week(rawValue: weekday)!
-    }
-    
     var hour: Int {
         return calendar.component(Calendar.Component.hour, from: date)
     }
@@ -64,15 +57,34 @@ class CalendarInfo {
     var weekOfYear: Int {
         return calendar.component(Calendar.Component.weekOfYear, from: date)
     }
+    var age: Int {
+        let today = Double(Int(Date().timeIntervalSince1970 / 86400) * 86400)
+        let space = date.timeIntervalSince1970 - today
+        if space > 0 {
+            return Int(space / 86400)
+        } else {
+            return Int(space / 86400) - 1
+        }
+    }
     
     // MARK: Counts
     
     var daysInMonth: Int {
-        return CalendarInfo.days(inMonth: month, inYear: year)
+        let total = self.year * 12 + self.month
+        let year = total / 12
+        let month = total % 12
+        switch month {
+        case 2:
+            return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0) ? 29 : 28
+        case 4, 6, 9, 11:
+            return 30
+        default:
+            return 31
+        }
     }
     
     var daysInYear: Int {
-        return CalendarInfo.days(inYear: year)
+        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0) ? 366 : 365
     }
     
     // MARK: First
@@ -105,55 +117,44 @@ class CalendarInfo {
         return date.addingTimeInterval(time)
     }
     
-    func offset(time: TimeInterval) -> CalendarInfo {
-        let new = date.addingTimeInterval(time)
-        return CalendarInfo(identifier: calendar.identifier, date: new)
+    // MARK: String
+    
+    var sYear: String {
+        return "\(year)"
     }
-    
-}
-
-// MARK: - Class Methods
-
-extension CalendarInfo {
-    
-    // MARK: Days
-    
-    /// month = 0 ~ 11
-    class func days(inMonth: Int, inYear: Int) -> Int {
-        let total = inYear * 12 + inMonth
-        let year = total / 12
-        let month = total % 12
-        switch month {
+    var sMonth: String {
+        return MCalendar.English.Months[month]
+    }
+    var sDay: String {
+        return "\(day)"
+    }
+    var sWeek: String {
+        return MCalendar.English.Weeks[week]
+    }
+    var sAge: String {
+        let age = self.age
+        switch age {
+        case 0:
+            return "Today"
+        case 1:
+            return "Tomorrow"
         case 2:
-            return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0) ? 29 : 28
-        case 4, 6, 9, 11:
-            return 30
+            return "Day after tomorrow"
+        case -1:
+            return "Yeasterday"
+        case -2:
+            return "Day before yesterday"
+        case 0 ..< Int.max:
+            return "After \(age) days"
         default:
-            return 31
+            return "\(age) days ago"
         }
     }
-    
-    class func days(inYear: Int) -> Int {
-        return (inYear % 4 == 0 && inYear % 100 != 0) || (inYear % 400 == 0) ? 366 : 365
-    }
-    
 }
 
-// MARK: - Week and Timestamp enums
+// MARK: - Timestamp enums
 
-extension CalendarInfo {
-    
-    enum Week: Int {
-        case Sunday = 1, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
-        
-        static func day(_ day: Int) -> Week {
-            return Week(rawValue: abs(day % 7))!
-        }
-        
-        init?(day: Int) {
-            self.init(rawValue: abs(day % 7))
-        }
-    }
+extension MCalendar {
     
     enum Timestamp: TimeInterval {
         case minute = 60.0
@@ -168,9 +169,17 @@ extension CalendarInfo {
     
 }
 
-// MARK: - Chinese
+// MARK: - String
 
-extension CalendarInfo {
+extension MCalendar {
+    
+    static let English: (
+        Months: [String],
+        Weeks:  [String]
+        ) = (
+            ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    )
     
     static let Chinese: (
         Era: [String],
@@ -178,7 +187,8 @@ extension CalendarInfo {
         EarthlyBranches: [String],
         Zodiacs: [String],
         Months: [String],
-        Days: [String]
+        Days: [String],
+        Weeks: [String]
         ) = (
             [
                 "甲子", "乙丑", "丙寅", "丁卯", "午辰", "己巳", "庚午", "辛未", "壬申", "癸酉",
@@ -196,19 +206,50 @@ extension CalendarInfo {
                 "初一", "初二", "初三", "初四", "初五", "初六", "初七", "初八", "初九", "初十",
                 "十一", "十二", "十三", "十四", "十五", "十六", "十七", "十八", "十九", "二十",
                 "廿一", "廿二", "廿三", "廿四", "廿五", "廿六", "廿七", "廿八", "廿九", "三十"
-            ]
+            ],
+            ["星期天", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"]
     )
     
-    var chineseYear: String {
-        return CalendarInfo.Chinese.Era[(year - 1) % 60]
+}
+
+// MARK: - Tools
+
+extension MCalendar {
+    
+    // MARK: Count
+    
+    class func range(_ date: Double, days: Int = 1) -> (Double, Double) {
+        let start = Double(Int(date / 86400) * 86400)
+        return (start, start + Double(days * 86400))
     }
-    var chineseZodiac: String {
-        return CalendarInfo.Chinese.Zodiacs[(year - 1) % 12]
+    
+    // MARK: Day Info
+    
+    class func year(_ date: Double) -> Int {
+        return Calendar.current.component(Calendar.Component.year, from: Date(timeIntervalSince1970: date))
     }
-    var chineseMonth: String {
-        return CalendarInfo.Chinese.Months[month - 1]
+    class func  month(_ date: Double) -> Int {
+        return Calendar.current.component(Calendar.Component.month, from: Date(timeIntervalSince1970: date))
     }
-    var chineseDay: String {
-        return CalendarInfo.Chinese.Days[day - 1]
+    class func  day(_ date: Double) -> Int {
+        return Calendar.current.component(Calendar.Component.day, from: Date(timeIntervalSince1970: date))
     }
+    class func  week(_ date: Double) -> Int {
+        return Calendar.current.component(Calendar.Component.weekday, from: Date(timeIntervalSince1970: date)) - 1
+    }
+    
+    class func sYear(_ date: Double) -> String {
+        return "\(Calendar.current.component(Calendar.Component.year, from: Date(timeIntervalSince1970: date)))"
+    }
+    class func sMonth(_ date: Double) -> String {
+        return MCalendar.English.Months[Calendar.current.component(Calendar.Component.month, from: Date(timeIntervalSince1970: date)) - 1]
+    }
+    class func sDay(_ date: Double) -> String {
+        return "\(Calendar.current.component(Calendar.Component.day, from: Date(timeIntervalSince1970: date)))"
+    }
+    class func sWeek(_ date: Double) -> String {
+        return MCalendar.English.Weeks[Calendar.current.component(Calendar.Component.weekday, from: Date(timeIntervalSince1970: date)) - 1]
+    }
+    
+    
 }

@@ -1,15 +1,17 @@
 //
-//  TimelineHeaderView.swift
+//  EditHeaderView.swift
 //  The_Day
 //
-//  Created by 黄穆斌 on 2017/2/18.
+//  Created by 黄穆斌 on 2017/2/24.
 //  Copyright © 2017年 黄穆斌. All rights reserved.
 //
 
 import UIKit
 
-class TimelineHeaderView: UIView {
-
+class EditHeaderView: UIImageView {
+    
+    weak var editView: EditView!
+    
     // MARK: - Init
     
     init() {
@@ -29,23 +31,28 @@ class TimelineHeaderView: UIView {
     
     private func deploy() {
         // MARK: Background Color
+        isUserInteractionEnabled = true
         
         // MARK: BackgroundImage
         imageView.image = UIImage(named: "Header_Background")
-        imageView.frame = CGRect.screen.update(h: 90)
+        imageView.frame = CGRect.screen.update(h: 70)
         addSubview(imageView)
         
         // MARK: Labels
         let view = UIView()
-        view.frame = CGRect.screen.update(h: 80)
+        view.frame = CGRect.screen.update(h: 60)
         view.layer.shadowOpacity = 0.5
         view.layer.shadowOffset = CGSize(width: 0, height: 1)
         addSubview(view)
         dayLabel.font = UIFont.boldSystemFont(ofSize: 22)
         dayLabel.textColor = UIColor.white
-        yearLabel.textColor = UIColor.white
         view.addSubview(dayLabel)
-        view.addSubview(yearLabel)
+        
+        // MARK: Button
+        backButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
+        backButton.setImage(UIImage(named: "Edit_Header_Done"), for: .normal)
+        backButton.frame = CGRect(x: 8, y: 20, width: 40, height: 40)
+        addSubview(backButton)
     }
     
     // MARK: - BackImage
@@ -54,23 +61,22 @@ class TimelineHeaderView: UIView {
     
     // MARK: - Date Label
     
-    var dayLabel = UILabel()
-    var yearLabel = UILabel()
+    let dayLabel = UILabel()
     
-    func update(year: String?, day: String?) {
+    func update(day: String?) {
         dayLabel.text = day
-        yearLabel.text = year
         dayLabel.sizeToFit()
-        yearLabel.sizeToFit()
         
-        dayLabel.frame = dayLabel.frame.update(
-            x: bounds.width - dayLabel.frame.width - 8,
-            y: bounds.center().y - dayLabel.frame.height + 10
-        )
-        yearLabel.frame = yearLabel.frame.update(
-            x: bounds.width - yearLabel.frame.width - 8,
-            y: bounds.center().y + 10
-        )
+        dayLabel.center = CGPoint(x: CGRect.screen.midX, y: 40)
+    }
+    
+    // MARK: - Back Button
+    
+    let backButton = UIButton()
+    
+    func backAction() {
+        mylog("backAction")
+        editView.controller.dismiss(animated: true, completion: nil)
     }
     
 }

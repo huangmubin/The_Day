@@ -8,33 +8,74 @@
 
 import UIKit
 
-// MARK: - Data Type
+// MARK: - Data
 
-enum DataType: Int {
-    case date = 0
-    case anniversary = 1
-    case note = 2
-    case voice = 3
-    case image = 4
-    case video = 5
-}
+var AppData: DataModel = {
+    let data = DataModel()
+    data.loadData()
+    return data
+}()
 
 // MARK: - Data Model
 
 class DataModel {
     
-    // MARK: Original Value
+    // MARK: Data
     
-    var _date: Double = 0
-    var _tag: Int = 0
-    var _value: String = ""
-    var _type: Int = 0
+    var days = [DayModel]()
+    var editDay: DayModel!
     
-    // MARK: Date
+}
+
+// MARK: - Get
+
+extension DataModel {
     
-    var value: String {
-        set { _value = newValue }
-        get { return _value }
+    var count: Int { return days.count }
+    subscript(_ index: IndexPath) -> DayModel {
+        return days[index.row]
+    }
+}
+
+// MARK: - Load Data
+
+extension DataModel {
+    
+    func loadData() {
+        let originDay = Date().timeIntervalSince1970
+        
+        for iDay in 0 ..< Tools.randomInRange(range: 0 ..< 100) {
+            let day = DayModel()
+            day.date = originDay + Double(iDay * 86400)
+            days.append(day)
+            
+            for iLog in 0 ..< Tools.randomInRange(range: 1 ..< 10) {
+                let log = LogModel()
+                log._date = day.date
+                log._type = Tools.randomInRange(range: 0 ..< 2)
+                log._value = "xxxxx \(iDay) \(iLog)"
+                day.logs.append(log)
+            }
+            
+            day.deployIndex()
+        }
+    }
+    
+    func loadToday() {
+        let range = MCalendar.range(Date().timeIntervalSince1970)
+        for day in days {
+            switch day.date {
+            case range.0 ..< range.1:
+                editDay = day
+                return
+            default:
+                break
+            }
+        }
+        editDay = DayModel()
+        editDay.date = range.0
     }
     
 }
+
+

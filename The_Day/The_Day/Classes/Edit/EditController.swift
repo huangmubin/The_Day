@@ -1,37 +1,40 @@
 //
-//  TimelineController.swift
+//  EditController.swift
 //  The_Day
 //
-//  Created by 黄穆斌 on 2017/2/17.
+//  Created by 黄穆斌 on 2017/2/20.
 //  Copyright © 2017年 黄穆斌. All rights reserved.
 //
 
 import UIKit
 
-class TimelineController: UIViewController {
+class EditController: UIViewController {
     
     // MARK: - Life cycle
     
     override func loadView() {
         super.loadView()
-        self.view = timeline
-        timeline.controller = self
+        self.view = editView
+        editView.controller = self
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let date = MCalendar()
-        timeline.header.update(year: "\(date.sMonth). \(date.year)", day: "\(date.sWeek) \(date.sDay)th")
+        editView.header.update(day: "\(AppData.editDay.day)th \(AppData.editDay.month).\(AppData.editDay.year)")
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        mylog("\(editView.isUserInteractionEnabled); \(editView.header.isUserInteractionEnabled); \(editView.header.backButton.isUserInteractionEnabled)")
+    }
+    
+    deinit {
+        mylog("Deinit")
     }
     
     // MARK: - Controller Set
@@ -41,16 +44,5 @@ class TimelineController: UIViewController {
     
     // MARK: - View
     
-    private let timeline = TimelineView()
-    
-    // MARK: - Segue
-    
-    lazy var editController: EditController = EditController()
-    
-    func pushEditController() {
-        self.present(editController, animated: true) { 
-            
-        }
-    }
-    
+    private let editView = EditView()
 }
