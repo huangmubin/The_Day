@@ -24,7 +24,13 @@ class LogModel {
     
     // MARK: Original Value
     
-    var _date: Double = 0
+    var _date: Double = 0 {
+        didSet {
+            let format = DateFormatter()
+            format.dateFormat = "HH:mm"
+            time = format.string(from: Date(timeIntervalSince1970: _date))
+        }
+    }
     var _type: Int = 0 {
         didSet { type = LogType(rawValue: _type) ?? .anniversary }
     }
@@ -41,6 +47,18 @@ class LogModel {
         default:
             return _value
         }
+    }
+    
+    // MARK: Time
+    
+    var time = ""
+    
+    // MARK: Height
+    
+    var height: CGFloat = 0
+    
+    func deployHeight() {
+        
     }
     
 }

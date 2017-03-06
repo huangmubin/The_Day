@@ -36,6 +36,7 @@ class TimelineView: UIView {
         
         // MARK: TableView
         tableView.frame = CGRect.screen.transform(y: 80)
+        tableView.timeline = self
         addSubview(tableView)
         
         // MARK: Header View

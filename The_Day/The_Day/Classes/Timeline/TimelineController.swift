@@ -20,6 +20,7 @@ class TimelineController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,9 +45,10 @@ class TimelineController: UIViewController {
     
     // MARK: - Segue
     
+    lazy var editController: EditController = EditController()
+    
     func pushEditController() {
-        let edit = EditController()
-        self.present(edit, animated: true) { 
+        self.present(editController, animated: true) { 
             
         }
     }

@@ -51,6 +51,12 @@ class TimelineTableView: UITableView, UITableViewDataSource, UITableViewDelegate
     
     // MARK: - UITableViewDelegate
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        AppData.editDay = AppData[indexPath]
+        timeline.controller.pushEditController()
+    }
+    
+    
     // MARK: - UIScrollDelegate
     
     private var scrollViewOffset: CGFloat = 0

@@ -18,6 +18,10 @@ class DayModel {
         }
     }
     var logs: [LogModel] = []
+    subscript(index: IndexPath) -> LogModel {
+        return logs[index.row]
+    }
+    
     
     // MARK: - Date
     
