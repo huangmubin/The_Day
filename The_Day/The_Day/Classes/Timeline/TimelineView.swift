@@ -2,7 +2,7 @@
 //  TimelineView.swift
 //  The_Day
 //
-//  Created by 黄穆斌 on 2017/2/18.
+//  Created by 黄穆斌 on 2017/3/7.
 //  Copyright © 2017年 黄穆斌. All rights reserved.
 //
 
@@ -30,49 +30,30 @@ class TimelineView: UIView {
     }
     
     private func deploy() {
-        // MARK: Background
-        backgroundColor = UIColor.white
-        layer.cornerRadius = 8
+        self.isUserInteractionEnabled = true
         
-        // MARK: TableView
-        tableView.frame = CGRect.screen.transform(y: 80)
-        tableView.timeline = self
-        addSubview(tableView)
+        // background
+        self.backgroundColor = UIColor.black
+        let sublayer = CALayer()
+        sublayer.frame = bounds
+        sublayer.cornerRadius = 8
+        sublayer.backgroundColor = UIColor.white.cgColor
+        self.layer.addSublayer(sublayer)
         
-        // MARK: Header View
-        header.frame = CGRect.screen.update(h: 80)
+        // Header
         addSubview(header)
+        header.timeline = self
         
-        // MARK: Add Button
-        addButton.addTarget(self, action: #selector(addAction), for: .touchUpInside)
-        addButton.setImage(UIImage(named: "Timeline_Add"), for: .normal)
-        addButton.frame = CGRect(
-            x: CGRect.screen.midX - 45,
-            y: CGRect.screen.maxY - 98,
-            width: 90,
-            height: 90
-        )
-        addSubview(addButton)
+        // TableView
+        addSubview(tableview)
+        tableview.timeline = self
     }
     
-    // MARK: - Header View
+    // MARK: - Header
     
     let header = TimelineHeaderView()
     
     // MARK: - TableView
     
-    let tableView = TimelineTableView(frame: UIScreen.main.bounds)
-    
-    // MARK: - Add Button
-    
-    var addButton: UIButton = UIButton()
-    
-    func addAction() {
-        AppData.loadToday()
-        controller.pushEditController()
-    }
-    
+    let tableview = TimelineTableView()
 }
-
-
-

@@ -2,7 +2,7 @@
 //  TimelineHeaderView.swift
 //  The_Day
 //
-//  Created by 黄穆斌 on 2017/2/18.
+//  Created by 黄穆斌 on 2017/3/8.
 //  Copyright © 2017年 黄穆斌. All rights reserved.
 //
 
@@ -10,6 +10,8 @@ import UIKit
 
 class TimelineHeaderView: UIView {
 
+    weak var timeline: TimelineView!
+    
     // MARK: - Init
     
     init() {
@@ -28,49 +30,100 @@ class TimelineHeaderView: UIView {
     }
     
     private func deploy() {
-        // MARK: Background Color
+        self.isUserInteractionEnabled = true
+        self.clipsToBounds = true
         
-        // MARK: BackgroundImage
-        imageView.image = UIImage(named: "Header_Background")
-        imageView.frame = CGRect.screen.update(h: 90)
-        addSubview(imageView)
+        // Background
+        self.frame = CGRect.screen.update(h: 70)
+        self.layer.addSublayer(shodowLayer)
+        shodowLayer.frame = CGRect(x: 0, y: 60, width: bounds.width, height: 4)
+        shodowLayer.backgroundColor = UIColor.white.cgColor
+        shodowLayer.shadowOpacity = 1
+        shodowLayer.shadowRadius = 0.5
+        shodowLayer.shadowColor = UIColor(178,178,178).cgColor
+        shodowLayer.shadowOffset = CGSize(width: 0, height: 1)
         
-        // MARK: Labels
-        let view = UIView()
-        view.frame = CGRect.screen.update(h: 80)
-        view.layer.shadowOpacity = 0.5
-        view.layer.shadowOffset = CGSize(width: 0, height: 1)
-        addSubview(view)
-        dayLabel.font = UIFont.boldSystemFont(ofSize: 22)
-        dayLabel.textColor = UIColor.white
-        yearLabel.textColor = UIColor.white
-        view.addSubview(dayLabel)
-        view.addSubview(yearLabel)
+        // Date
+        let x = bounds.width / 4
+        
+        addSubview(day)
+        day.addTarget(self, action: #selector(dayAction), for: .touchUpInside)
+        day.setTitleColor(UIColor.black, for: .normal)
+        day.frame = CGRect(x: x, y: 20, width: x * 2, height: 44)
+        day.titleLabel?.font = UIFont.systemFont(ofSize: 24, weight: UIFontWeightMedium)
+        
+        addSubview(year)
+        year.addTarget(self, action: #selector(yearAction), for: .touchUpInside)
+        year.setTitleColor(UIColor.black, for: .normal)
+        year.contentHorizontalAlignment = .right
+        year.frame = CGRect(x: x * 3, y: 20, width: x - 8, height: 44)
+        year.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: UIFontWeightRegular)
+        
+        // Up
+        /*
+        addSubview(up)
+        up.frame = CGRect(x: 0, y: 230, width: bounds.width, height: 30)
+        up.tintColor = UIColor.black
+        up.setImage(UIImage(named: "Sure"), for: .normal)
+        up.setTitleColor(UIColor.black, for: .normal)
+        up.addTarget(self, action: #selector(upAction), for: .touchUpInside)
+         */
     }
     
-    // MARK: - BackImage
+    // MARK: - Frame
     
-    let imageView = UIImageView()
+    override var bounds: CGRect {
+        didSet {
+            updateFrame()
+        }
+    }
     
-    // MARK: - Date Label
+    override var frame: CGRect {
+        didSet {
+            updateFrame()
+        }
+    }
     
-    var dayLabel = UILabel()
-    var yearLabel = UILabel()
-    
-    func update(year: String?, day: String?) {
-        dayLabel.text = day
-        yearLabel.text = year
-        dayLabel.sizeToFit()
-        yearLabel.sizeToFit()
+    func updateFrame() {
+        shodowLayer.frame.origin.y = bounds.height - 10
         
-        dayLabel.frame = dayLabel.frame.update(
-            x: bounds.width - dayLabel.frame.width - 8,
-            y: bounds.center().y - dayLabel.frame.height + 10
-        )
-        yearLabel.frame = yearLabel.frame.update(
-            x: bounds.width - yearLabel.frame.width - 8,
-            y: bounds.center().y + 10
-        )
+    }
+    
+    // MARK: - Layer
+    
+    let shodowLayer = CALayer()
+    
+    
+    // MARK: - Day
+    
+    let day = UIButton(type: UIButtonType.system)
+    
+    func deploy(day: String?) {
+        self.day.setTitle(day, for: .normal)
+    }
+    
+    func dayAction() {
+        
+    }
+    
+    // MARK: - Year
+    
+    let year = UIButton(type: UIButtonType.system)
+    
+    func deploy(year: String?) {
+        self.year.setTitle(year, for: .normal)
+    }
+    
+    func yearAction() {
+        
+    }
+    
+    // MARK: - Up Button
+    
+    let up = UIButton(type: UIButtonType.system)
+    
+    func upAction() {
+        
     }
     
 }

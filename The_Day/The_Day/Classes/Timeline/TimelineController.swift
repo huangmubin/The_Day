@@ -2,7 +2,7 @@
 //  TimelineController.swift
 //  The_Day
 //
-//  Created by 黄穆斌 on 2017/2/17.
+//  Created by 黄穆斌 on 2017/3/7.
 //  Copyright © 2017年 黄穆斌. All rights reserved.
 //
 
@@ -10,47 +10,26 @@ import UIKit
 
 class TimelineController: UIViewController {
     
-    // MARK: - Life cycle
+    // MARK: - Life
     
     override func loadView() {
         super.loadView()
-        self.view = timeline
         timeline.controller = self
+        view = timeline
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        AppData.loadData()
+        AppData.loadToday()
         
+        timeline.header.deploy(day: "\(AppData.editDay.week) \(AppData.editDay.day)th")
+        timeline.header.deploy(year: "\(AppData.editDay.month). \(AppData.editDay.year)")
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        let date = MCalendar()
-        timeline.header.update(year: "\(date.sMonth). \(date.year)", day: "\(date.sWeek) \(date.sDay)th")
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-    }
-    
-    // MARK: - Controller Set
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle { return UIStatusBarStyle.lightContent }
-    //override var prefersStatusBarHidden: Bool { return true }
     
     // MARK: - View
     
-    private let timeline = TimelineView()
+    let timeline = TimelineView()
     
-    // MARK: - Segue
-    
-    lazy var editController: EditController = EditController()
-    
-    func pushEditController() {
-        self.present(editController, animated: true) { 
-            
-        }
-    }
     
 }
